@@ -53,6 +53,10 @@ void enlarge(HashMap * map) {
 
 HashMap * createMap(long capacity) {
     HashMap * map = (HashMap *) malloc(sizeof(HashMap));
+    if (map == NULL) {
+        printf("Error al crear el mapa\n");
+        return NULL;
+    }
     map->buckets = (Pair **) calloc(capacity, sizeof(Pair *));
     map->capacity = capacity;
     map->size = 0;
